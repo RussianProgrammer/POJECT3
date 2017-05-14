@@ -92,6 +92,7 @@ public class MapFragment extends Fragment {
 
                 mMap.setMyLocationEnabled(true);
                 mMap.getUiSettings().setMyLocationButtonEnabled(true);
+                mMap.getUiSettings().setZoomControlsEnabled(true);
 
                 for (Marker marker : usualMarkers) {
                     Location loc = new Location(location);

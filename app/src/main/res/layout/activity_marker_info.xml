@@ -18,6 +18,7 @@
             android:id="@+id/toolbar_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="#04223D"
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
@@ -25,7 +26,9 @@
             <ImageView
                 android:id="@+id/marker_info_icon"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/marker_info_placeholder"/>
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
