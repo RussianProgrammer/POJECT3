@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="sis.pewpew.MarkerInfoActivity"
+    tools:context="sis.pewpew.utils.MarkerInfoActivity"
     tools:showIn="@layout/activity_marker_info">
 
     <RelativeLayout
@@ -146,8 +146,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/marker_info_work_time_call"
                     android:layout_toRightOf="@id/marker_info_work_time_icon"
-                    android:paddingLeft="10dp"
                     android:paddingBottom="5dp"
+                    android:paddingLeft="10dp"
                     android:text="Загрузка…"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp" />
@@ -158,8 +158,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/marker_info_work_time"
                     android:layout_toRightOf="@id/marker_info_work_time_icon"
-                    android:paddingLeft="10dp"
                     android:paddingBottom="10dp"
+                    android:paddingLeft="10dp"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp" />
 
@@ -211,11 +211,13 @@
                     android:id="@+id/marker_info_contacts_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:autoLink="email"
+                    android:linksClickable="true"
                     android:layout_below="@id/marker_info_contacts_call"
                     android:layout_toRightOf="@id/marker_info_contacts_icon"
+                    android:paddingBottom="5dp"
                     android:paddingLeft="10dp"
                     android:text="Загрузка…"
-                    android:paddingBottom="5dp"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp" />
 
@@ -223,6 +225,8 @@
                     android:id="@+id/marker_info_contacts_phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:autoLink="phone"
+                    android:linksClickable="true"
                     android:layout_below="@id/marker_info_contacts_email"
                     android:layout_toRightOf="@id/marker_info_contacts_icon"
                     android:paddingBottom="5dp"
@@ -234,10 +238,12 @@
                     android:id="@+id/marker_info_contacts_url"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:linksClickable="true"
                     android:layout_below="@id/marker_info_contacts_phone"
                     android:layout_toRightOf="@id/marker_info_contacts_icon"
-                    android:paddingLeft="10dp"
                     android:paddingBottom="10dp"
+                    android:paddingLeft="10dp"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp" />
 
@@ -293,17 +299,6 @@
                     android:layout_toRightOf="@id/marker_info_prize_fund_icon"
                     android:paddingLeft="10dp"
                     android:text="Загрузка…"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/marker_info_prize_fund_desc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/marker_info_prize_fund_call"
-                    android:layout_toRightOf="@id/marker_info_prize_fund"
-                    android:layout_toEndOf="@id/marker_info_prize_fund"
-                    android:text=" очков"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp" />
 

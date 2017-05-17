@@ -1,26 +1,844 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="sis.pewpew.fragments.AchievementsFragment">
+    tools:context="sis.pewpew.fragments.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true" />
+        android:layout_height="match_parent">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/achieves_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/achieve_1_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?selectableItemBackground"
+                card_view:cardBackgroundColor="#616161"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="5dp"
+                card_view:contentPadding="5dp">
 
-</RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/achieve_1_icon"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_alignParentTop="true"
+                        android:contentDescription="@string/description"
+                        android:foregroundGravity="left"
+                        android:padding="10dp"
+                        app:srcCompat="@drawable/unknown_achieve_icon" />
+
+                    <TextView
+                        android:id="@+id/achieve_1_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/achieve_1_icon"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="0dp"
+                        android:text="Закрыто"
+                        android:textColor="#FFFFFF"
+                        android:textSize="45sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/achieve_1_progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/achieve_1_title"
+                        android:layout_toRightOf="@id/achieve_1_icon"
+                        android:paddingLeft="10dp"
+                        android:text="Загрузка выполнения…"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/achieve_2_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/achieve_1_card"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?selectableItemBackground"
+                card_view:cardBackgroundColor="#616161"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="5dp"
+                card_view:contentPadding="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/achieve_2_icon"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_alignParentTop="true"
+                        android:contentDescription="@string/description"
+                        android:foregroundGravity="left"
+                        android:padding="10dp"
+                        app:srcCompat="@drawable/unknown_achieve_icon" />
+
+                    <TextView
+                        android:id="@+id/achieve_2_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_toRightOf="@id/achieve_2_icon"
+                        android:paddingLeft="10dp"
+                        android:text="Закрыто"
+                        android:textColor="#FFFFFF"
+                        android:textSize="45sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/achieve_2_progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/achieve_2_title"
+                        android:layout_toRightOf="@id/achieve_2_icon"
+                        android:paddingLeft="10dp"
+                        android:text="Загрузка выполнения…"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/achieve_3_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/achieve_2_card"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?selectableItemBackground"
+                card_view:cardBackgroundColor="#616161"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="5dp"
+                card_view:contentPadding="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/achieve_3_icon"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_alignParentTop="true"
+                        android:contentDescription="@string/description"
+                        android:foregroundGravity="left"
+                        android:padding="10dp"
+                        app:srcCompat="@drawable/unknown_achieve_icon" />
+
+                    <TextView
+                        android:id="@+id/achieve_3_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_toRightOf="@id/achieve_3_icon"
+                        android:paddingLeft="10dp"
+                        android:text="Закрыто"
+                        android:textColor="#FFFFFF"
+                        android:textSize="45sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/achieve_3_progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/achieve_3_title"
+                        android:layout_toRightOf="@id/achieve_3_icon"
+                        android:paddingLeft="10dp"
+                        android:text="Загрузка выполнения…"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/achieve_4_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/achieve_3_card"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?selectableItemBackground"
+                card_view:cardBackgroundColor="#616161"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="5dp"
+                card_view:contentPadding="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/achieve_4_icon"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_alignParentTop="true"
+                        android:contentDescription="@string/description"
+                        android:foregroundGravity="left"
+                        android:padding="10dp"
+                        app:srcCompat="@drawable/unknown_achieve_icon" />
+
+                    <TextView
+                        android:id="@+id/achieve_4_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_toRightOf="@id/achieve_4_icon"
+                        android:paddingLeft="10dp"
+                        android:text="Закрыто"
+                        android:textColor="#FFFFFF"
+                        android:textSize="45sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/achieve_4_progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/achieve_4_title"
+                        android:layout_toRightOf="@id/achieve_4_icon"
+                        android:paddingLeft="10dp"
+                        android:text="Загрузка выполнения…"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/achieve_5_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/achieve_4_card"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?selectableItemBackground"
+                card_view:cardBackgroundColor="#616161"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="5dp"
+                card_view:contentPadding="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/achieve_5_icon"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_alignParentTop="true"
+                        android:contentDescription="@string/description"
+                        android:foregroundGravity="left"
+                        android:padding="10dp"
+                        app:srcCompat="@drawable/unknown_achieve_icon" />
+
+                    <TextView
+                        android:id="@+id/achieve_5_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_toRightOf="@id/achieve_5_icon"
+                        android:paddingLeft="10dp"
+                        android:text="Закрыто"
+                        android:textColor="#FFFFFF"
+                        android:textSize="45sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/achieve_5_progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/achieve_5_title"
+                        android:layout_toRightOf="@id/achieve_5_icon"
+                        android:paddingLeft="10dp"
+                        android:text="Загрузка выполнения…"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/achieve_6_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/achieve_5_card"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?selectableItemBackground"
+                card_view:cardBackgroundColor="#616161"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="5dp"
+                card_view:contentPadding="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/achieve_6_icon"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_alignParentTop="true"
+                        android:contentDescription="@string/description"
+                        android:foregroundGravity="left"
+                        android:padding="10dp"
+                        app:srcCompat="@drawable/unknown_achieve_icon" />
+
+                    <TextView
+                        android:id="@+id/achieve_6_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_toRightOf="@id/achieve_6_icon"
+                        android:paddingLeft="10dp"
+                        android:text="Закрыто"
+                        android:textColor="#FFFFFF"
+                        android:textSize="45sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/achieve_6_progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/achieve_6_title"
+                        android:layout_toRightOf="@id/achieve_6_icon"
+                        android:paddingLeft="10dp"
+                        android:text="Загрузка выполнения…"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/achieve_7_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/achieve_6_card"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?selectableItemBackground"
+                card_view:cardBackgroundColor="#616161"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="5dp"
+                card_view:contentPadding="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/achieve_7_icon"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_alignParentTop="true"
+                        android:contentDescription="@string/description"
+                        android:foregroundGravity="left"
+                        android:padding="10dp"
+                        app:srcCompat="@drawable/unknown_achieve_icon" />
+
+                    <TextView
+                        android:id="@+id/achieve_7_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_toRightOf="@id/achieve_7_icon"
+                        android:paddingLeft="10dp"
+                        android:text="Закрыто"
+                        android:textColor="#FFFFFF"
+                        android:textSize="45sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/achieve_7_progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/achieve_7_title"
+                        android:layout_toRightOf="@id/achieve_7_icon"
+                        android:paddingLeft="10dp"
+                        android:text="Загрузка выполнения…"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/achieve_8_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/achieve_7_card"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?selectableItemBackground"
+                card_view:cardBackgroundColor="#616161"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="5dp"
+                card_view:contentPadding="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/achieve_8_icon"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_alignParentTop="true"
+                        android:contentDescription="@string/description"
+                        android:foregroundGravity="left"
+                        android:padding="10dp"
+                        app:srcCompat="@drawable/unknown_achieve_icon" />
+
+                    <TextView
+                        android:id="@+id/achieve_8_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_toRightOf="@id/achieve_8_icon"
+                        android:paddingLeft="10dp"
+                        android:text="Закрыто"
+                        android:textColor="#FFFFFF"
+                        android:textSize="45sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/achieve_8_progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/achieve_8_title"
+                        android:layout_toRightOf="@id/achieve_8_icon"
+                        android:paddingLeft="10dp"
+                        android:text="Загрузка выполнения…"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/achieve_9_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/achieve_8_card"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?selectableItemBackground"
+                card_view:cardBackgroundColor="#616161"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="5dp"
+                card_view:contentPadding="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/achieve_9_icon"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_alignParentTop="true"
+                        android:contentDescription="@string/description"
+                        android:foregroundGravity="left"
+                        android:padding="10dp"
+                        app:srcCompat="@drawable/unknown_achieve_icon" />
+
+                    <TextView
+                        android:id="@+id/achieve_9_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_toRightOf="@id/achieve_9_icon"
+                        android:paddingLeft="10dp"
+                        android:text="Закрыто"
+                        android:textColor="#FFFFFF"
+                        android:textSize="45sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/achieve_9_progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/achieve_9_title"
+                        android:layout_toRightOf="@id/achieve_9_icon"
+                        android:paddingLeft="10dp"
+                        android:text="Загрузка выполнения…"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/achieve_10_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/achieve_9_card"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?selectableItemBackground"
+                card_view:cardBackgroundColor="#616161"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="5dp"
+                card_view:contentPadding="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/achieve_10_icon"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_alignParentTop="true"
+                        android:contentDescription="@string/description"
+                        android:foregroundGravity="left"
+                        android:padding="10dp"
+                        app:srcCompat="@drawable/unknown_achieve_icon" />
+
+                    <TextView
+                        android:id="@+id/achieve_10_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_toRightOf="@id/achieve_10_icon"
+                        android:paddingLeft="10dp"
+                        android:text="Закрыто"
+                        android:textColor="#FFFFFF"
+                        android:textSize="45sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/achieve_10_progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/achieve_10_title"
+                        android:layout_toRightOf="@id/achieve_10_icon"
+                        android:paddingLeft="10dp"
+                        android:text="Загрузка выполнения…"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/achieve_11_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/achieve_10_card"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?selectableItemBackground"
+                card_view:cardBackgroundColor="#616161"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="5dp"
+                card_view:contentPadding="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/achieve_11_icon"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_alignParentTop="true"
+                        android:contentDescription="@string/description"
+                        android:foregroundGravity="left"
+                        android:padding="10dp"
+                        app:srcCompat="@drawable/unknown_achieve_icon" />
+
+                    <TextView
+                        android:id="@+id/achieve_11_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_toRightOf="@id/achieve_11_icon"
+                        android:paddingLeft="10dp"
+                        android:text="Закрыто"
+                        android:textColor="#FFFFFF"
+                        android:textSize="45sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/achieve_11_progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/achieve_11_title"
+                        android:layout_toRightOf="@id/achieve_11_icon"
+                        android:paddingLeft="10dp"
+                        android:text="Загрузка выполнения…"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/achieve_12_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/achieve_11_card"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?selectableItemBackground"
+                card_view:cardBackgroundColor="#616161"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="5dp"
+                card_view:contentPadding="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/achieve_12_icon"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_alignParentTop="true"
+                        android:contentDescription="@string/description"
+                        android:foregroundGravity="left"
+                        android:padding="10dp"
+                        app:srcCompat="@drawable/unknown_achieve_icon" />
+
+                    <TextView
+                        android:id="@+id/achieve_12_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_toRightOf="@id/achieve_12_icon"
+                        android:paddingLeft="10dp"
+                        android:text="Закрыто"
+                        android:textColor="#FFFFFF"
+                        android:textSize="45sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/achieve_12_progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/achieve_12_title"
+                        android:layout_toRightOf="@id/achieve_12_icon"
+                        android:paddingLeft="10dp"
+                        android:text="Загрузка выполнения…"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/achieve_13_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/achieve_12_card"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?selectableItemBackground"
+                card_view:cardBackgroundColor="#616161"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="5dp"
+                card_view:contentPadding="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/achieve_13_icon"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_alignParentTop="true"
+                        android:contentDescription="@string/description"
+                        android:foregroundGravity="left"
+                        android:padding="10dp"
+                        app:srcCompat="@drawable/unknown_achieve_icon" />
+
+                    <TextView
+                        android:id="@+id/achieve_13_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_toRightOf="@id/achieve_13_icon"
+                        android:paddingLeft="10dp"
+                        android:text="Закрыто"
+                        android:textColor="#FFFFFF"
+                        android:textSize="45sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/achieve_13_progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/achieve_13_title"
+                        android:layout_toRightOf="@id/achieve_13_icon"
+                        android:paddingLeft="10dp"
+                        android:text="Загрузка выполнения…"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/achieve_14_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/achieve_13_card"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?selectableItemBackground"
+                card_view:cardBackgroundColor="#616161"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="5dp"
+                card_view:contentPadding="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/achieve_14_icon"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_alignParentTop="true"
+                        android:contentDescription="@string/description"
+                        android:foregroundGravity="left"
+                        android:padding="10dp"
+                        app:srcCompat="@drawable/unknown_achieve_icon" />
+
+                    <TextView
+                        android:id="@+id/achieve_14_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_toRightOf="@id/achieve_14_icon"
+                        android:paddingLeft="10dp"
+                        android:text="Закрыто"
+                        android:textColor="#FFFFFF"
+                        android:textSize="45sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/achieve_14_progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/achieve_14_title"
+                        android:layout_toRightOf="@id/achieve_14_icon"
+                        android:paddingLeft="10dp"
+                        android:text="Загрузка выполнения…"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/achieve_15_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/achieve_14_card"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?selectableItemBackground"
+                card_view:cardBackgroundColor="#616161"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="5dp"
+                card_view:contentPadding="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/achieve_15_icon"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_alignParentTop="true"
+                        android:contentDescription="@string/description"
+                        android:foregroundGravity="left"
+                        android:padding="10dp"
+                        app:srcCompat="@drawable/unknown_achieve_icon" />
+
+                    <TextView
+                        android:id="@+id/achieve_15_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_toRightOf="@id/achieve_15_icon"
+                        android:paddingLeft="10dp"
+                        android:text="Закрыто"
+                        android:textColor="#FFFFFF"
+                        android:textSize="45sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/achieve_15_progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/achieve_15_title"
+                        android:layout_toRightOf="@id/achieve_15_icon"
+                        android:paddingLeft="10dp"
+                        android:text="Загрузка выполнения…"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</FrameLayout>

@@ -43,8 +43,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import sis.pewpew.MainActivity;
-import sis.pewpew.MarkerInfoActivity;
 import sis.pewpew.R;
+import sis.pewpew.utils.MarkerInfoActivity;
 
 import static android.content.Context.LOCATION_SERVICE;
 import static com.google.android.gms.internal.zzt.TAG;
@@ -289,7 +289,7 @@ public class MapFragment extends Fragment {
         ValueEventListener postListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.child("users").child(user.getUid()).child("points").getValue() == null) {
+                if (dataSnapshot.child("users").child(user.getUid()).child("points").getValue() == null && !closed) {
                     mDatabase.child("users").child(user.getUid()).child("points").setValue(0);
                 }
             }

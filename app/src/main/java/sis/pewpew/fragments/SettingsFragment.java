@@ -54,6 +54,11 @@ public class SettingsFragment extends PreferenceFragment {
                 mDatabase.child("users").child(user.getUid()).removeValue();
                 FirebaseAuth.getInstance().signOut();
                 logOut();
+                String[] sharedPrefsName = new String[]{"ACHIEVE1", "ACHIEVE2", "ACHIEVE3", "ACHIEVE4",
+                        "ACHIEVE5", "ACHIEVE6", "ACHIEVE7", "ACHIEVE8", "ACHIEVE9", "ACHIEVE10", "ACHIEVE11",
+                        "ACHIEVE12", "ACHIEVE13", "ACHIEVE14", "ACHIEVE15"};
+                for (String sharedPrefs : sharedPrefsName)
+                    getActivity().getSharedPreferences(sharedPrefs, 0).edit().clear().apply();
             }
         });
         deleteAccountDialog.setNegativeButton("Отмена", new DialogInterface.OnClickListener() {
@@ -106,7 +111,6 @@ public class SettingsFragment extends PreferenceFragment {
                 reset();
             }
         });
-
 
 
         final Preference preference1 = findPreference("delete_account_button");
@@ -192,7 +196,7 @@ public class SettingsFragment extends PreferenceFragment {
     private void reset() {
         String[] sharedPrefsName = new String[]{"MAP", "ACHIEVEMENTS", "EVENTS", "NEWS", "PROFILE", "PROGRESS", "TRAINING", "RATING"};
         for (String sharedPrefs : sharedPrefsName)
-        getActivity().getSharedPreferences(sharedPrefs, 0).edit().clear().apply();
+            getActivity().getSharedPreferences(sharedPrefs, 0).edit().clear().apply();
         Toast.makeText(getActivity(), "Настройки сброшены", Toast.LENGTH_SHORT).show();
     }
 

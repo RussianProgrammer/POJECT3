@@ -45,12 +45,12 @@
             android:resource="@color/colorPrimary" />
 
         <activity
-            android:name=".MarkerInfoActivity"
+            android:name=".utils.MarkerInfoActivity"
             android:label="@string/title_activity_marker_info"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".EventMarkerInfoActivity"
-            android:label="@string/title_activity_event_marker_info"
+            android:name=".utils.AcheivementInfoActivity"
+            android:label="@string/title_activity_acheivement_info"
             android:theme="@style/AppTheme" />
     </application>
 

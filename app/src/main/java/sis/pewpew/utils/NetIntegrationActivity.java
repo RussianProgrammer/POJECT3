@@ -27,7 +27,6 @@ public class NetIntegrationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         mAuth = FirebaseAuth.getInstance();
-        //DatabaseReference mDataBase = FirebaseDatabase.getInstance().getReference();
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -36,7 +35,6 @@ public class NetIntegrationActivity extends AppCompatActivity {
                     String username = user.getDisplayName();
                     String email = user.getEmail();
 
-                    ///////
                     NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
                     View headerView = navigationView.getHeaderView(0);
                     if (user.getDisplayName() != null) {
@@ -53,15 +51,6 @@ public class NetIntegrationActivity extends AppCompatActivity {
                         TextView navUserEmail = (TextView) headerView.findViewById(R.id.user_email);
                         navUserEmail.setText("Адрес электронной почты");
                     }
-
-                    /*SharedPreferences sharedConfig = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                    ImageView genderIcon = (ImageView) findViewById(R.id.user_icon);
-                    String gender = sharedConfig.getString("gender_selector", "2");
-                    if (gender.equals("1")) {
-                        genderIcon.setImageResource(R.drawable.male_icon);
-                    } else if (gender.equals("2")) {
-                        genderIcon.setImageResource(R.drawable.female_icon);
-                    }*/
 
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
                 } else {
