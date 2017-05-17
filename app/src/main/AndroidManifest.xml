@@ -49,8 +49,8 @@
             android:label="@string/title_activity_marker_info"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".utils.AcheivementInfoActivity"
-            android:label="@string/title_activity_acheivement_info"
+            android:name=".utils.AchievementInfoActivity"
+            android:label="@string/title_activity_achievement_info"
             android:theme="@style/AppTheme" />
     </application>
 

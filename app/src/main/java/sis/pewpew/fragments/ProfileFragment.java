@@ -24,10 +24,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
 import sis.pewpew.MainActivity;
 import sis.pewpew.R;
 
@@ -38,10 +34,6 @@ public class ProfileFragment extends Fragment {
     public FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     public long pointsFromDatabase;
     private String statusFromDatabase;
-    private boolean closed;
-    private Locale locale = new Locale("ru");
-    private String date = new SimpleDateFormat("dd.MM.yyyy", locale).format(new Date());
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -100,190 +92,36 @@ public class ProfileFragment extends Fragment {
 
                     if (pointsFromDatabase < 100) {
                         achieves.setText("0");
-                    } else if (pointsFromDatabase >= 100 && pointsFromDatabase < 500) {
+                    } else if (pointsFromDatabase >= 100 && pointsFromDatabase < 600) {
                         achieves.setText("1");
-                    } else if (pointsFromDatabase >= 500 && pointsFromDatabase < 1000) {
+                    } else if (pointsFromDatabase >= 600 && pointsFromDatabase < 1100) {
                         achieves.setText("2");
-                    } else if (pointsFromDatabase >= 1000 && pointsFromDatabase < 1500) {
+                    } else if (pointsFromDatabase >= 1100 && pointsFromDatabase < 1600) {
                         achieves.setText("3");
-                    } else if (pointsFromDatabase >= 1500 && pointsFromDatabase < 2000) {
+                    } else if (pointsFromDatabase >= 1600 && pointsFromDatabase < 2100) {
                         achieves.setText("4");
-                    } else if (pointsFromDatabase >= 2000 && pointsFromDatabase < 2500) {
+                    } else if (pointsFromDatabase >= 2100 && pointsFromDatabase < 2600) {
                         achieves.setText("5");
-                    } else if (pointsFromDatabase >= 2500 && pointsFromDatabase < 3000) {
+                    } else if (pointsFromDatabase >= 2600 && pointsFromDatabase < 3100) {
                         achieves.setText("6");
-                    } else if (pointsFromDatabase >= 3000 && pointsFromDatabase < 3500) {
+                    } else if (pointsFromDatabase >= 3100 && pointsFromDatabase < 3600) {
                         achieves.setText("7");
-                    } else if (pointsFromDatabase >= 3500 && pointsFromDatabase < 4000) {
+                    } else if (pointsFromDatabase >= 3600 && pointsFromDatabase < 4100) {
                         achieves.setText("8");
-                    } else if (pointsFromDatabase >= 4000 && pointsFromDatabase < 4500) {
+                    } else if (pointsFromDatabase >= 4100 && pointsFromDatabase < 4600) {
                         achieves.setText("9");
-                    } else if (pointsFromDatabase >= 4500 && pointsFromDatabase < 5000) {
+                    } else if (pointsFromDatabase >= 4600 && pointsFromDatabase < 5100) {
                         achieves.setText("10");
-                    } else if (pointsFromDatabase >= 5000 && pointsFromDatabase < 5500) {
+                    } else if (pointsFromDatabase >= 5100 && pointsFromDatabase < 5600) {
                         achieves.setText("11");
-                    } else if (pointsFromDatabase >= 5500 && pointsFromDatabase < 6000) {
+                    } else if (pointsFromDatabase >= 5600 && pointsFromDatabase < 6100) {
                         achieves.setText("12");
-                    } else if (pointsFromDatabase >= 6000 && pointsFromDatabase < 6500) {
+                    } else if (pointsFromDatabase >= 6100 && pointsFromDatabase < 6600) {
                         achieves.setText("13");
-                    } else if (pointsFromDatabase >= 6500 && pointsFromDatabase < 7000) {
+                    } else if (pointsFromDatabase >= 6600 && pointsFromDatabase < 7100) {
                         achieves.setText("14");
                     } else {
                         achieves.setText("15");
-                    }
-
-                    if (!closed) {
-
-                        if (pointsFromDatabase >= 100) {
-                            SharedPreferences settings = getActivity().getSharedPreferences("ACHIEVE1", 0);
-                            boolean achieve1Gotten = settings.getBoolean("achieve1Gotten", true);
-                            if (achieve1Gotten) {
-                                mDatabase.child("users").child(user.getUid()).child("achievements").child("1").setValue(date);
-                            }
-                            SharedPreferences.Editor editor = settings.edit();
-                            editor.putBoolean("achieve1Gotten", false);
-                            editor.apply();
-                        }
-                        if (pointsFromDatabase >= 500) {
-                            SharedPreferences settings = getActivity().getSharedPreferences("ACHIEVE2", 0);
-                            boolean achieve2Gotten = settings.getBoolean("achieve2Gotten", true);
-                            if (achieve2Gotten) {
-                                mDatabase.child("users").child(user.getUid()).child("achievements").child("2").setValue(date);
-                            }
-                            SharedPreferences.Editor editor = settings.edit();
-                            editor.putBoolean("achieve2Gotten", false);
-                            editor.apply();
-                        }
-                        if (pointsFromDatabase >= 1000) {
-                            SharedPreferences settings = getActivity().getSharedPreferences("ACHIEVE3", 0);
-                            boolean achieve3Gotten = settings.getBoolean("achieve3Gotten", true);
-                            if (achieve3Gotten) {
-                                mDatabase.child("users").child(user.getUid()).child("achievements").child("3").setValue(date);
-                            }
-                            SharedPreferences.Editor editor = settings.edit();
-                            editor.putBoolean("achieve3Gotten", false);
-                            editor.apply();
-                        }
-                        if (pointsFromDatabase >= 1500) {
-                            SharedPreferences settings = getActivity().getSharedPreferences("ACHIEVE4", 0);
-                            boolean achieve4Gotten = settings.getBoolean("achieve4Gotten", true);
-                            if (achieve4Gotten) {
-                                mDatabase.child("users").child(user.getUid()).child("achievements").child("4").setValue(date);
-                            }
-                            SharedPreferences.Editor editor = settings.edit();
-                            editor.putBoolean("achieve4Gotten", false);
-                            editor.apply();
-                        }
-                        if (pointsFromDatabase >= 2000) {
-                            SharedPreferences settings = getActivity().getSharedPreferences("ACHIEVE5", 0);
-                            boolean achieve5Gotten = settings.getBoolean("achieve5Gotten", true);
-                            if (achieve5Gotten) {
-                                mDatabase.child("users").child(user.getUid()).child("achievements").child("5").setValue(date);
-                            }
-                            SharedPreferences.Editor editor = settings.edit();
-                            editor.putBoolean("achieve5Gotten", false);
-                            editor.apply();
-                        }
-                        if (pointsFromDatabase >= 2500) {
-                            SharedPreferences settings = getActivity().getSharedPreferences("ACHIEVE6", 0);
-                            boolean achieve6Gotten = settings.getBoolean("achieve6Gotten", true);
-                            if (achieve6Gotten) {
-                                mDatabase.child("users").child(user.getUid()).child("achievements").child("6").setValue(date);
-                            }
-                            SharedPreferences.Editor editor = settings.edit();
-                            editor.putBoolean("achieve6Gotten", false);
-                            editor.apply();
-                        }
-                        if (pointsFromDatabase >= 3000) {
-                            SharedPreferences settings = getActivity().getSharedPreferences("ACHIEVE7", 0);
-                            boolean achieve7Gotten = settings.getBoolean("achieve7Gotten", true);
-                            if (achieve7Gotten) {
-                                mDatabase.child("users").child(user.getUid()).child("achievements").child("7").setValue(date);
-                            }
-                            SharedPreferences.Editor editor = settings.edit();
-                            editor.putBoolean("achieve7Gotten", false);
-                            editor.apply();
-                        }
-                        if (pointsFromDatabase >= 3500) {
-                            SharedPreferences settings = getActivity().getSharedPreferences("ACHIEVE8", 0);
-                            boolean achieve8Gotten = settings.getBoolean("achieve8Gotten", true);
-                            if (achieve8Gotten) {
-                                mDatabase.child("users").child(user.getUid()).child("achievements").child("8").setValue(date);
-                            }
-                            SharedPreferences.Editor editor = settings.edit();
-                            editor.putBoolean("achieve8Gotten", false);
-                            editor.apply();
-                        }
-                        if (pointsFromDatabase >= 4000) {
-                            SharedPreferences settings = getActivity().getSharedPreferences("ACHIEVE9", 0);
-                            boolean achieve9Gotten = settings.getBoolean("achieve9Gotten", true);
-                            if (achieve9Gotten) {
-                                mDatabase.child("users").child(user.getUid()).child("achievements").child("9").setValue(date);
-                            }
-                            SharedPreferences.Editor editor = settings.edit();
-                            editor.putBoolean("achieve9Gotten", false);
-                            editor.apply();
-                        }
-                        if (pointsFromDatabase >= 4500) {
-                            SharedPreferences settings = getActivity().getSharedPreferences("ACHIEVE10", 0);
-                            boolean achieve10Gotten = settings.getBoolean("achieve10Gotten", true);
-                            if (achieve10Gotten) {
-                                mDatabase.child("users").child(user.getUid()).child("achievements").child("10").setValue(date);
-                            }
-                            SharedPreferences.Editor editor = settings.edit();
-                            editor.putBoolean("achieve10Gotten", false);
-                            editor.apply();
-                        }
-                        if (pointsFromDatabase >= 5000) {
-                            SharedPreferences settings = getActivity().getSharedPreferences("ACHIEVE11", 0);
-                            boolean achieve11Gotten = settings.getBoolean("achieve11Gotten", true);
-                            if (achieve11Gotten) {
-                                mDatabase.child("users").child(user.getUid()).child("achievements").child("11").setValue(date);
-                            }
-                            SharedPreferences.Editor editor = settings.edit();
-                            editor.putBoolean("achieve11Gotten", false);
-                            editor.apply();
-                        }
-                        if (pointsFromDatabase >= 5500) {
-                            SharedPreferences settings = getActivity().getSharedPreferences("ACHIEVE12", 0);
-                            boolean achieve12Gotten = settings.getBoolean("achieve12Gotten", true);
-                            if (achieve12Gotten) {
-                                mDatabase.child("users").child(user.getUid()).child("achievements").child("12").setValue(date);
-                            }
-                            SharedPreferences.Editor editor = settings.edit();
-                            editor.putBoolean("achieve12Gotten", false);
-                            editor.apply();
-                        }
-                        if (pointsFromDatabase >= 6000) {
-                            SharedPreferences settings = getActivity().getSharedPreferences("ACHIEVE13", 0);
-                            boolean achieve13Gotten = settings.getBoolean("achieve13Gotten", true);
-                            if (achieve13Gotten) {
-                                mDatabase.child("users").child(user.getUid()).child("achievements").child("13").setValue(date);
-                            }
-                            SharedPreferences.Editor editor = settings.edit();
-                            editor.putBoolean("achieve13Gotten", false);
-                            editor.apply();
-                        }
-                        if (pointsFromDatabase >= 6500) {
-                            SharedPreferences settings = getActivity().getSharedPreferences("ACHIEVE14", 0);
-                            boolean achieve14Gotten = settings.getBoolean("achieve14Gotten", true);
-                            if (achieve14Gotten) {
-                                mDatabase.child("users").child(user.getUid()).child("achievements").child("14").setValue(date);
-                            }
-                            SharedPreferences.Editor editor = settings.edit();
-                            editor.putBoolean("achieve14Gotten", false);
-                            editor.apply();
-                        }
-                        if (pointsFromDatabase >= 7000) {
-                            SharedPreferences settings = getActivity().getSharedPreferences("ACHIEVE15", 0);
-                            boolean achieve15Gotten = settings.getBoolean("achieve15Gotten", true);
-                            if (achieve15Gotten) {
-                                mDatabase.child("users").child(user.getUid()).child("achievements").child("15").setValue(date);
-                            }
-                            SharedPreferences.Editor editor = settings.edit();
-                            editor.putBoolean("achieve15Gotten", false);
-                            editor.apply();
-                        }
                     }
 
                     if ((int) pointsFromDatabase < 500) {
@@ -596,18 +434,6 @@ public class ProfileFragment extends Fragment {
         String shareBody = "У меня крутой профиль: " + (int) pointsFromDatabase;
         shareIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
         startActivity(Intent.createChooser(shareIntent, "Поделиться профилем"));
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        closed = true;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        closed = false;
     }
 
     @Override
